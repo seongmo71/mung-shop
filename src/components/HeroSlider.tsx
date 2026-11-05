@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles, Heart, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 interface HeroSliderProps {
   onOpenReview: () => void;
@@ -14,32 +14,18 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
   onOpenMembership,
   onSelectCategory,
 }) => {
-  const [currentSlide, setCurrentSlide] = useState<0 | 1>(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
-    }, 6500);
-    return () => clearInterval(timer);
-  }, [isPaused]);
-
   return (
-    <section 
-      id="hero"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      className="relative w-full bg-[#B35336] text-white overflow-hidden select-none transition-colors duration-700 min-h-[580px] lg:min-h-[640px] flex flex-col justify-between"
-    >
-      {/* Subtle organic background wave/glow */}
-      <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-200 via-transparent to-black" />
+    <section id="hero" className="w-full flex flex-col select-none">
+      {/* ─────────────────────────────────────────────────────────────
+          1. 상단 배너: 가입 첫 결제 5% 할인 혜택 (모델 1)
+         ───────────────────────────────────────────────────────────── */}
+      <div className="relative w-full bg-[#B35336] text-white overflow-hidden py-12 lg:py-16 border-b border-[#9A3F25]">
+        {/* Subtle background glow */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-200 via-transparent to-black" />
 
-      {/* Slide 1: Welcome 5% Discount (Image 2 - 1_3e2e1046.webp) */}
-      {currentSlide === 0 && (
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center z-10 animate-in fade-in duration-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           {/* Left Text Content */}
-          <div className="lg:col-span-6 space-y-6 lg:pr-8 text-center lg:text-left">
+          <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
             <p className="text-xs sm:text-sm font-semibold tracking-[0.25em] text-amber-200 uppercase font-sans-kr flex items-center justify-center lg:justify-start gap-2">
               <span className="w-6 h-[1px] bg-amber-200/60 inline-block"></span>
               THE FINEST FARM-TO-BOWL PET SHOP
@@ -74,12 +60,12 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
             </div>
           </div>
 
-          {/* Right Visual Frame */}
+          {/* Right Visual Frame (모델 1) */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
             <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 group">
               <img
                 src="/assets/aistudio/hero_model_1.jpg"
-                alt="멍득템 펫샵 매장과 반려견 모델"
+                alt="멍득템 펫샵 매장과 반려견 모델 1"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
@@ -87,22 +73,38 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
               <div className="absolute top-4 left-4 bg-[#F5B842] text-[#2C2420] text-xs font-extrabold px-3 py-1.5 rounded-full shadow-md rotate-[-8deg] flex items-center gap-1">
                 <span>Woof!</span>
               </div>
-              {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* Circular Pawfetch Stamp Badge */}
+            <div className="hidden sm:flex absolute -bottom-4 -right-2 items-center justify-center w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-[#F5B842] text-[#2C2420] p-1.5 shadow-xl rotate-[12deg] hover:rotate-0 transition-transform cursor-pointer select-none z-20">
+              <div className="w-full h-full rounded-full border border-dashed border-[#2C2420]/50 flex flex-col items-center justify-center p-1 text-center">
+                <span className="text-[7px] uppercase tracking-wider font-extrabold text-[#593E10]">FOR HAPPY DOGS</span>
+                <span className="text-[10px] font-black tracking-tight font-serif-kr">PAWFETCH</span>
+                <span className="text-[8px] font-serif font-bold italic">Pet Co.</span>
+                <span className="text-[6.5px] font-semibold text-[#593E10]">MADE WITH LOVE</span>
+                <div className="w-2.5 h-[1px] bg-[#2C2420]/40 my-0.5" />
+                <span className="text-[6px] tracking-widest font-bold">★ NATURAL ★</span>
+              </div>
             </div>
           </div>
         </div>
-      )}
+      </div>
 
-      {/* Slide 2: Review Points (Image 1 - 2_a5688296.jpg) */}
-      {currentSlide === 1 && (
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center z-10 animate-in fade-in duration-500">
-          {/* Left Visual Frame */}
+      {/* ─────────────────────────────────────────────────────────────
+          2. 하단 배너: 상품후기 포인트 적립 (모델 2)
+         ───────────────────────────────────────────────────────────── */}
+      <div className="relative w-full bg-[#9E4528] text-white overflow-hidden py-12 lg:py-16 border-b border-[#87361D]">
+        {/* Subtle background glow */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-300 via-transparent to-black" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+          {/* Left Visual Frame (모델 2) */}
           <div className="lg:col-span-6 relative flex justify-center items-center order-2 lg:order-1">
             <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 group">
               <img
                 src="/assets/aistudio/hero_model_2.png"
-                alt="멍득템 가방을 멘 반려견"
+                alt="멍득템 가방을 멘 반려견 모델 2"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
@@ -115,9 +117,9 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           </div>
 
           {/* Right Text Content with Paw Watermark */}
-          <div className="lg:col-span-6 space-y-6 lg:pl-8 text-center lg:text-left order-1 lg:order-2 relative">
+          <div className="lg:col-span-6 space-y-6 lg:pl-6 text-center lg:text-left order-1 lg:order-2 relative">
             {/* Center Heart Paw Decorative Stamp */}
-            <div className="hidden lg:block absolute -top-8 right-12 w-28 h-28 opacity-30 pointer-events-none">
+            <div className="hidden lg:block absolute -top-8 right-8 w-28 h-28 opacity-25 pointer-events-none">
               <svg viewBox="0 0 100 100" fill="currentColor" className="text-white">
                 <circle cx="28" cy="28" r="14" />
                 <circle cx="50" cy="18" r="13" />
@@ -132,10 +134,10 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
               MUNG-DEUKTEM REWARD POINT
             </p>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-kr font-bold leading-[1.3] tracking-tight drop-shadow-sm">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-kr font-bold leading-[1.3] tracking-tight drop-shadow-sm">
               상품후기<br />
               <span className="text-amber-100">포인트 적립</span>
-            </h1>
+            </h2>
 
             <p className="text-sm sm:text-base text-amber-100/90 font-sans-kr leading-relaxed">
               상품후기 작성시 포인트 샵에서 쓸 수 있는 포인트 적립<br />
@@ -145,7 +147,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
               <button
                 onClick={onOpenReview}
-                className="px-7 py-3 bg-white text-[#B35336] font-semibold text-sm rounded-full shadow-md hover:bg-amber-50 active:scale-95 transition-all cursor-pointer font-sans-kr flex items-center gap-1.5"
+                className="px-7 py-3 bg-white text-[#9E4528] font-semibold text-sm rounded-full shadow-md hover:bg-amber-50 active:scale-95 transition-all cursor-pointer font-sans-kr flex items-center gap-1.5"
               >
                 <span>후기 작성</span>
                 <ArrowRight className="w-4 h-4" />
@@ -157,64 +159,6 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
                 내 포인트 적립금
               </button>
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* Stepper Navigation Strip & Circular Seal Badge */}
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-6 flex items-end justify-between z-20">
-        {/* Step Indicator (Matches STEP 01 - SNIFF / STEP 02 - CHASE in screenshot) */}
-        <div className="flex items-center gap-6 text-xs sm:text-sm font-bold tracking-widest text-amber-100/80">
-          <button
-            onClick={() => setCurrentSlide(0)}
-            className={`transition-all pb-1 cursor-pointer flex items-center gap-2 ${
-              currentSlide === 0
-                ? 'text-white border-b-2 border-white scale-105'
-                : 'text-white/60 hover:text-white'
-            }`}
-          >
-            <span>STEP 01 — SNIFF</span>
-          </button>
-          <span className="text-white/40">/</span>
-          <button
-            onClick={() => setCurrentSlide(1)}
-            className={`transition-all pb-1 cursor-pointer flex items-center gap-2 ${
-              currentSlide === 1
-                ? 'text-white border-b-2 border-white scale-105'
-                : 'text-white/60 hover:text-white'
-            }`}
-          >
-            <span>STEP 02 — CHASE TRAIL</span>
-          </button>
-        </div>
-
-        {/* Carousel Prev/Next Buttons */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setCurrentSlide((prev) => (prev === 0 ? 1 : 0))}
-            className="w-8 h-8 rounded-full bg-black/20 hover:bg-black/40 text-white flex items-center justify-center backdrop-blur-sm transition-colors cursor-pointer"
-            aria-label="이전 슬라이드"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <button
-            onClick={() => setCurrentSlide((prev) => (prev === 0 ? 1 : 0))}
-            className="w-8 h-8 rounded-full bg-black/20 hover:bg-black/40 text-white flex items-center justify-center backdrop-blur-sm transition-colors cursor-pointer"
-            aria-label="다음 슬라이드"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Authentic Circular Pawfetch Stamp Badge (Yellow Seal from screenshots) */}
-        <div className="hidden sm:flex relative items-center justify-center w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-[#F5B842] text-[#2C2420] p-1.5 shadow-xl rotate-[12deg] hover:rotate-0 transition-transform cursor-pointer select-none">
-          <div className="w-full h-full rounded-full border border-dashed border-[#2C2420]/50 flex flex-col items-center justify-center p-1 text-center">
-            <span className="text-[7px] uppercase tracking-wider font-extrabold text-[#593E10]">FOR HAPPY DOGS</span>
-            <span className="text-[10px] font-black tracking-tight font-serif-kr">PAWFETCH</span>
-            <span className="text-[8px] font-serif font-bold italic">Pet Co.</span>
-            <span className="text-[6.5px] font-semibold text-[#593E10]">MADE WITH LOVE</span>
-            <div className="w-2.5 h-[1px] bg-[#2C2420]/40 my-0.5" />
-            <span className="text-[6px] tracking-widest font-bold">★ NATURAL ★</span>
           </div>
         </div>
       </div>
