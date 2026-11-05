@@ -89,7 +89,7 @@ export const CategorySlider: React.FC<CategorySliderProps> = ({
   };
 
   return (
-    <section id="categories" className="py-16 sm:py-20 bg-[#FAF7F2] border-b border-[#EAE2D7]">
+    <section id="categories" className="py-16 sm:py-20 bg-[#FAF7F2] border-b border-[#EAE2D7] scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Title & Arrow Nav Buttons (Matching Image 4) */}
         <div className="flex items-end justify-between mb-8 sm:mb-10">

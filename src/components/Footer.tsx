@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer id="contact" className="bg-[#120F0D] text-[#D1C6BC] font-sans-kr">
+    <footer id="contact" className="bg-[#120F0D] text-[#D1C6BC] font-sans-kr scroll-mt-28">
       {/* 1. Yellow Accent Newsletter Bar (Matching Image 5) */}
       <div className="bg-[#E5A832] text-[#1F1916] py-5 px-4 sm:px-6 lg:px-8 border-b border-[#D49924]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">

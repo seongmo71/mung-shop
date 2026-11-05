@@ -18,7 +18,7 @@ export const NewMemberDeals: React.FC<NewMemberDealsProps> = ({
   const ballProduct = dealProducts.find((p) => p.id === 'organic-knitting-ball') || products[3];
 
   return (
-    <section id="deals" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE2D7]">
+    <section id="deals" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE2D7] scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header (Matching Image 3) */}
         <div className="text-center max-w-xl mx-auto mb-12 sm:mb-16 space-y-2">

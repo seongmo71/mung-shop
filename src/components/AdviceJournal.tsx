@@ -15,7 +15,7 @@ export const AdviceJournal: React.FC<AdviceJournalProps> = ({
   const sideArticles = articles.slice(1);
 
   return (
-    <section id="advice" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE2D7]">
+    <section id="advice" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE2D7] scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-12 gap-4">

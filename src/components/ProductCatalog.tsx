@@ -51,7 +51,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   }, [products, selectedCategory, sortBy]);
 
   return (
-    <section id="catalog" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE2D7]">
+    <section id="catalog" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE2D7] scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title & Subtitle */}
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">

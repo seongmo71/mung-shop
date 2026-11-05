@@ -15,15 +15,15 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
   onSelectCategory,
 }) => {
   return (
-    <section id="hero" className="w-full flex flex-col select-none">
+    <section id="hero" className="w-full bg-[#FAF7F2] py-6 sm:py-10 px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8 select-none scroll-mt-28">
       {/* ─────────────────────────────────────────────────────────────
           1. 상단 배너: 가입 첫 결제 5% 할인 혜택 (모델 1)
          ───────────────────────────────────────────────────────────── */}
-      <div className="relative w-full bg-[#B35336] text-white overflow-hidden py-12 lg:py-16 border-b border-[#9A3F25]">
+      <div className="relative max-w-7xl mx-auto w-full bg-[#B35336] text-white rounded-3xl lg:rounded-[2.5rem] overflow-hidden py-12 lg:py-16 shadow-lg border border-[#A1472D]">
         {/* Subtle background glow */}
         <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-200 via-transparent to-black" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+        <div className="px-6 sm:px-10 lg:px-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           {/* Left Text Content */}
           <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
             <p className="text-xs sm:text-sm font-semibold tracking-[0.25em] text-amber-200 uppercase font-sans-kr flex items-center justify-center lg:justify-start gap-2">
@@ -62,7 +62,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
 
           {/* Right Visual Frame (모델 1) */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
-            <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 group">
+            <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 group">
               <img
                 src="/assets/aistudio/hero_model_1.jpg"
                 alt="멍득템 펫샵 매장과 반려견 모델 1"
@@ -94,14 +94,14 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
       {/* ─────────────────────────────────────────────────────────────
           2. 하단 배너: 상품후기 포인트 적립 (모델 2)
          ───────────────────────────────────────────────────────────── */}
-      <div className="relative w-full bg-[#9E4528] text-white overflow-hidden py-12 lg:py-16 border-b border-[#87361D]">
+      <div className="relative max-w-7xl mx-auto w-full bg-[#9E4528] text-white rounded-3xl lg:rounded-[2.5rem] overflow-hidden py-12 lg:py-16 shadow-lg border border-[#8B3B21]">
         {/* Subtle background glow */}
         <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-300 via-transparent to-black" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+        <div className="px-6 sm:px-10 lg:px-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           {/* Left Visual Frame (모델 2) */}
           <div className="lg:col-span-6 relative flex justify-center items-center order-2 lg:order-1">
-            <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 group">
+            <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 group">
               <img
                 src="/assets/aistudio/hero_model_2.png"
                 alt="멍득템 가방을 멘 반려견 모델 2"
