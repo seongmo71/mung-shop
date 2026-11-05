@@ -44,10 +44,10 @@ export const NewMemberDeals: React.FC<NewMemberDealsProps> = ({
               className="relative aspect-[4/3] bg-[#EBD8CE] overflow-hidden cursor-pointer"
             >
               <img
-                src="/assets/aistudio/3_5021d272.jpg"
+                src="/assets/aistudio/deal_jerky.jpg"
                 alt="수제 간식 - 100% 국내 제조"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-left group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#B35336] text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                 신규 특가 33% OFF
@@ -102,10 +102,10 @@ export const NewMemberDeals: React.FC<NewMemberDealsProps> = ({
               className="relative aspect-[4/3] bg-[#EBD8CE] overflow-hidden cursor-pointer"
             >
               <img
-                src="/assets/aistudio/3_5021d272.jpg"
+                src="/assets/aistudio/deal_knitting_ball.jpg"
                 alt="니팅볼 - 무독성 무형광염료"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-right group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#B35336] text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                 신규 특가 36% OFF

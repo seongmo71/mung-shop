@@ -78,10 +78,10 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           <div className="lg:col-span-6 relative flex justify-center items-center">
             <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 group">
               <img
-                src="/assets/aistudio/1_3e2e1046.webp"
-                alt="멍득템 펫샵 매장과 반려견"
+                src="/assets/aistudio/hero_model_1.jpg"
+                alt="멍득템 펫샵 매장과 반려견 모델"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-right group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               {/* Woof! Badge */}
               <div className="absolute top-4 left-4 bg-[#F5B842] text-[#2C2420] text-xs font-extrabold px-3 py-1.5 rounded-full shadow-md rotate-[-8deg] flex items-center gap-1">
@@ -101,10 +101,10 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           <div className="lg:col-span-6 relative flex justify-center items-center order-2 lg:order-1">
             <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 group">
               <img
-                src="/assets/aistudio/2_a5688296.jpg"
+                src="/assets/aistudio/hero_model_2.png"
                 alt="멍득템 가방을 멘 반려견"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-left group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               {/* Let's go! Badge */}
               <div className="absolute top-4 left-4 bg-[#FF758F] text-white text-xs font-extrabold px-3 py-1.5 rounded-full shadow-md rotate-[-8deg]">
