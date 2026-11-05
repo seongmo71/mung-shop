@@ -1,0 +1,6 @@
+{
+  "name": "멍득템 (mung-deuktem) 펫샵",
+  "description": "반려견을 위한 프리미엄 사료, 수제 간식, 라이프스타일 용품 전문 쇼핑몰 mung-deuktem",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
